@@ -5,20 +5,17 @@ draft = false
 title = "How to use the command 'git rev-parse'"
 
 [extra]
-keywords = "Git, Command Line"
+keywords = "Git"
 series = "Git"
 toc = true
 
 [taxonomies]
 tags = [
     "Git",
-    "Command Line",
 ]
 +++
 
 It is used for parsing and retrieving Git object identifiers in a user-friendly manner. Highly useful in scripting Git operations.
-
-- `git rev-parse`: instruction for converting various Git references into easily understandable outputs.
 
 ## Get commit hash of the branch
 
@@ -57,12 +54,6 @@ Explanation:
 - `--abbrev-ref`: outputs a human-readable abbreviation of a reference rather than its full SHA-1 hash. In this context, it produces a concise branch name.
 - `HEAD`: Represents the pointer to the current branch. By applying `--abbrev-ref` to `HEAD`, the operation effectively translates the reference into the active branch name.
 
-Example:
-
-```bash
-git rev-parse --abbrev-ref HEAD
-```
-
 Output:
 
 ```bash
@@ -87,4 +78,51 @@ Output:
 
 ```bash
 /Users/parv.gupta/repos/github.com/gptparv/til
+```
+
+
+## Verify given reference exists
+
+```bash
+git rev-parse --verify <branch_name>
+```
+
+Sometimes it useful in automation scripts to know if the branch exists.
+
+Explanation:
+
+- `--verify`: provided parameter returns standard output; otherwise, error out.
+
+Example:
+
+```bash
+git rev-parse --verify main
+```
+
+Output:
+
+```bash
+ad90fcffc76aa50813b82b57f219a6df4e6a2224
+```
+
+Example:
+
+```bash
+git rev-parse --verify feature_branch
+```
+
+Output:
+
+```bash
+fatal: Needed a single revision
+```
+
+Script:
+
+```bash
+if git rev-parse --verify <branch_name> >/dev/null 2>&1; then
+  echo "The branch exists."
+else
+  echo "The branch does not exist."
+fi
 ```
