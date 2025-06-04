@@ -1,0 +1,5 @@
+
+Sitemap: https://gptparv.github.io/til/sitemap.xml
+User-Agent: *
+Allow: /
+Host: https://gptparv.github.io/til

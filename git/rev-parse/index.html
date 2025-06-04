@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://gptparv.github.io/til/js/theme.min.js" integrity="sha384-pb++s6uBRKaQv+iAXpgA/H3IlpLZdO14tTwuCI7uXmz4aaZdByoCcM+6BhynMq/1"></script>
+  <link rel="stylesheet" href="https://gptparv.github.io/til/abridge.css?h=13bb51e6f91ba948b2ca" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="base" content="https://gptparv.github.io/til" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://gptparv.github.io/til/manifest.min.json" />
+  <link rel="mask-icon" href="https://gptparv.github.io/til/safari-pinned-tab.svg" color="#ff9900" />
+  <link rel="icon" type="image/svg+xml" href="https://gptparv.github.io/til/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://gptparv.github.io/til/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://gptparv.github.io/til/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://gptparv.github.io/til/favicon-16x16.png" />
+  <link rel="alternate" type="application/atom+xml" title="Today I Learned Atom Feed" href="https://gptparv.github.io/til/atom.xml" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>How to use the command 'git rev-parse' | Today I Learned</title>
+  <meta name="author" content="Parv G" />
+  <meta name="copyright" content="Today I Learned" />
+  <meta name="description" content="It is used for parsing and retrieving Git object identifiers in a user-friendly manner." />
+  <link rel="canonical" href="https://gptparv.github.io/til/git/rev-parse/" />
+  <meta name="keywords" content="Git, Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta name="google-site-verification" content="Your Google Site verification code." />
+  <meta name="msvalidate.01" content="Your Bing Site verification code." />
+  <meta property="og:url" content="https://gptparv.github.io/til/git/rev-parse/" />
+  <meta name="twitter:url" content="https://gptparv.github.io/til/git/rev-parse/" />
+  <meta property="og:description" content="It is used for parsing and retrieving Git object identifiers in a user-friendly manner." />
+  <meta name="twitter:description" content="It is used for parsing and retrieving Git object identifiers in a user-friendly manner." />
+  <meta property="og:title" content="How to use the command &#x27;git rev-parse&#x27; | Today I Learned" />
+  <meta name="twitter:title" content="How to use the command &#x27;git rev-parse&#x27; | Today I Learned" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://gptparv.github.io/til/banner.png" />
+  <meta property="og:image" content="https://gptparv.github.io/til/banner.png" />
+  <meta property="og:site_name" content="Today I Learned" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="2025-06-02" />
+  <meta name="twitter:site" content="@your-user-name" />
+  <meta name="twitter:creator" content="@your-user-name" />
+  <script defer src="https://gptparv.github.io/til/js/abridge.min.js?h=e0f9a881a665c86cce9c" integrity="sha384-QF67y7RnPkuDrJNQqn3/7nYxqxWkW/qHI7zN0WTES1aXbf+TotoByRBb835fUE6U"></script>
+  <noscript><link rel="stylesheet" href="https://gptparv.github.io/til/nojs.css" /></noscript>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><big><a href="https://gptparv.github.io/til" title="Today I Learned"><font color="#f90">T</font>oday I Learned!</a></big></div>
+      <div>
+
+        <div>
+          <ul><li><a class="s110" href="https://gptparv.github.io/til/archive/"> Posts </a></li><li><a class="s110" href="https://gptparv.github.io/til/tags/"> Tags </a></li><li><i type="reset" id="mode" class="js svgs adjust"></i></ul>
+        </div>
+
+        <div>
+          <div>
+            <form autocomplete=off class="js" name="goSearch" id="searchbox">
+              <div class="searchd">
+                <input id="searchinput" type="text" placeholder="Search" title="Search" />
+                <button type="submit" title="Search" class="svgs svgm search"></button>
+              </div>
+              <div class="results"><div id="suggestions"></div></div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+  <main>
+    <article>
+      <h1><a href="https://gptparv.github.io/til/git/rev-parse/">How to use the command 'git rev-parse'</a></h1>
+
+      <span class="s95"> Parv G <span class="rpad"></span> June 02, 2025 <span class="rpad"></span> #<a href="https://gptparv.github.io/til/tags/git/">Git</a> </span>
+
+    
+        <div class="block">
+      <div class="blockdiv">
+        <a class="b s150" href="https://gptparv.github.io/til/tags/git/">Git (Series)</a><br>
+            <a class="scur" href="https://gptparv.github.io/til/git/rev-parse/">How to use the command &#x27;git rev-parse&#x27;</a><br> 
+          
+      </div>
+    </div>
+
+
+<p>It is used for parsing and retrieving Git object identifiers in a user-friendly manner. Highly useful in scripting Git operations.</p>
+<h2 id="get-commit-hash-of-the-branch">Get commit hash of the branch</h2>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">git</span></span><span class="z-meta z-function-call z-arguments z-shell"> rev-parse <span class="z-keyword z-operator z-assignment z-redirection z-shell">&lt;</span>branch_name<span class="z-keyword z-operator z-assignment z-redirection z-shell">&gt;</span>
+</span></span></code></pre>
+<p>Getting the commit hash of the branch is crucial to reference a specific state of the code. For example, deploying application changes, version tagging, or troubleshooting issues.</p>
+<p>Explanation:</p>
+<ul>
+<li><code>branch_name</code>: specifies the name of the branch whose commit hash you want to retrieve. Returns the corresponding SHA-1 hash, a unique 40-character identifier that represents the precise state of the branch.</li>
+</ul>
+<p>Example:</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">git</span></span><span class="z-meta z-function-call z-arguments z-shell"> rev-parse main</span>
+</span></code></pre>
+<p>Output:</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">ce248f5ef7bb80f841f1bca3f3faf9d4d4c0b085</span></span>
+</span></code></pre>
+<h2 id="get-the-current-branch-name">Get the current branch name</h2>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">git</span></span><span class="z-meta z-function-call z-arguments z-shell"> rev-parse<span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> --</span>abbrev-ref</span> HEAD</span>
+</span></code></pre>
+<p>Determining the current branch name in environments where scripts or automated processes must adapt dynamically based on the active branch.</p>
+<p>Explanation:</p>
+<ul>
+<li><code>--abbrev-ref</code>: outputs a human-readable abbreviation of a reference rather than its full SHA-1 hash. In this context, it produces a concise branch name.</li>
+<li><code>HEAD</code>: Represents the pointer to the current branch. By applying <code>--abbrev-ref</code> to <code>HEAD</code>, the operation effectively translates the reference into the active branch name.</li>
+</ul>
+<p>Output:</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">main</span></span>
+</span></code></pre>
+<p>This result signifies that the user is working on the <code>main</code> branch.</p>
+<h2 id="get-the-absolute-path-to-the-root-directory">Get the absolute path to the root directory</h2>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">git</span></span><span class="z-meta z-function-call z-arguments z-shell"> rev-parse<span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> --</span>show-toplevel</span></span>
+</span></code></pre>
+<p>Utilizing the absolute path prevents errors associated with path ambiguities and ensures that all path-dependent scripts and commands operate from the correct starting point.</p>
+<p>Explanation:</p>
+<ul>
+<li><code>--show-toplevel</code>: An option designed to reveal the absolute path of the top-level directory of the repository. This reveals the repository’s root directory independent of the current working directory or structure.</li>
+</ul>
+<p>Output:</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">/Users/parv.gupta/repos/github.com/gptparv/til</span></span>
+</span></code></pre>
+<h2 id="verify-given-reference-exists">Verify given reference exists</h2>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">git</span></span><span class="z-meta z-function-call z-arguments z-shell"> rev-parse<span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> --</span>verify</span> <span class="z-keyword z-operator z-assignment z-redirection z-shell">&lt;</span>branch_name<span class="z-keyword z-operator z-assignment z-redirection z-shell">&gt;</span>
+</span></span></code></pre>
+<p>Sometimes it useful in automation scripts to know if the branch exists.</p>
+<p>Explanation:</p>
+<ul>
+<li><code>--verify</code>: provided parameter returns standard output; otherwise, error out.</li>
+</ul>
+<p>Example:</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">git</span></span><span class="z-meta z-function-call z-arguments z-shell"> rev-parse<span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> --</span>verify</span> main</span>
+</span></code></pre>
+<p>Output:</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">ad90fcffc76aa50813b82b57f219a6df4e6a2224</span></span>
+</span></code></pre>
+<p>Example:</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">git</span></span><span class="z-meta z-function-call z-arguments z-shell"> rev-parse<span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> --</span>verify</span> feature_branch</span>
+</span></code></pre>
+<p>Output:</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">fatal:</span></span><span class="z-meta z-function-call z-arguments z-shell"> Needed a single revision</span>
+</span></code></pre>
+<p>Script:</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-keyword z-control z-conditional z-if z-shell">if</span> <span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">git</span></span><span class="z-meta z-function-call z-arguments z-shell"> rev-parse<span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> --</span>verify</span> <span class="z-keyword z-operator z-assignment z-redirection z-shell">&lt;</span>branch_name<span class="z-keyword z-operator z-assignment z-redirection z-shell">&gt;</span> <span class="z-keyword z-operator z-assignment z-redirection z-shell">&gt;</span>/dev/null <span class="z-constant z-numeric z-integer z-decimal z-file-descriptor z-shell">2</span><span class="z-keyword z-operator z-assignment z-redirection z-shell">&gt;&amp;</span><span class="z-constant z-numeric z-integer z-decimal z-file-descriptor z-shell">1</span></span><span class="z-keyword z-operator z-logical z-continue z-shell">;</span> <span class="z-keyword z-control z-conditional z-then z-shell">then</span>
+</span><span class="z-source z-shell z-bash">  <span class="z-meta z-function-call z-shell"><span class="z-support z-function z-echo z-shell">echo</span></span><span class="z-meta z-function-call z-arguments z-shell"> <span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>The branch exists.<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span></span>
+</span><span class="z-source z-shell z-bash"><span class="z-keyword z-control z-conditional z-else z-shell">else</span>
+</span><span class="z-source z-shell z-bash">  <span class="z-meta z-function-call z-shell"><span class="z-support z-function z-echo z-shell">echo</span></span><span class="z-meta z-function-call z-arguments z-shell"> <span class="z-string z-quoted z-double z-shell"><span class="z-punctuation z-definition z-string z-begin z-shell">&quot;</span>The branch does not exist.<span class="z-punctuation z-definition z-string z-end z-shell">&quot;</span></span></span>
+</span><span class="z-source z-shell z-bash"><span class="z-keyword z-control z-conditional z-end z-shell">fi</span>
+</span></code></pre>
+
+      <nav>
+        <div>
+          <a href="https://gptparv.github.io/til/bash/dns-check/">&#8249; How to check DNS resolution globally</a>
+        </div>
+        <div>
+        </div>
+      </nav>
+    </article>
+
+    <div class="sblock">
+      <div class="blockdiv">
+        <a class="b s150" href="https://gptparv.github.io/til/tags/git/">Series</a><br>
+            
+      <a class="scur" href="https://gptparv.github.io/til/git/rev-parse/">How to use the command &#x27;git rev-parse&#x27;</a><br>
+    
+      </div>
+      <div class="blockdiv sticky">
+        <a class="b s150" href="#">Index</a>
+        <div>
+          <a href="#get-commit-hash-of-the-branch">Get commit hash of the branch</a>
+        </div>
+        <div>
+          <a href="#get-the-current-branch-name">Get the current branch name</a>
+        </div>
+        <div>
+          <a href="#get-the-absolute-path-to-the-root-directory">Get the absolute path to the root directory</a>
+        </div>
+        <div>
+          <a href="#verify-given-reference-exists">Verify given reference exists</a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="c">
+      <nav class="tpad"><div><a type="application/atom+xml" href="https://gptparv.github.io/til/atom.xml" target="_blank" title="Today I Learned Atom Feed"><i type="Button" class="svg rss" title="Today I Learned Atom Feed"></i></a><a class="js m-protected" href="#bmFtZUBleGFtcGxlLmNvbQ==" target="_blank" title="Mail"><i type="Button" class="svg mail" title="Mail"></i></a><a href="https://mastodon.example.com/@username" target="_blank" title="Mastodon" rel="me"><i type="Button" class="svg mastodon" title="Mastodon"></i></a><a href="https://matrix.example.com/" target="_blank" title="Element"><i type="Button" class="svg element" title="Element"></i></a><a href="https://github.com/your-user-name/" target="_blank" title="Github"><i type="Button" class="svg github" title="Github"></i></a><a href="https://www.instagram.com/your-user-name/" target="_blank" title="Instagram"><i type="Button" class="svg instagram" title="Instagram"></i></a><a href="https://www.youtube.com/channel&#x2F;your-channel-id" target="_blank" title="YouTube"><i type="Button" class="svg youtube" title="YouTube"></i></a><a href="https://www.twitch.tv/your-user-name/" target="_blank" title="Twitch"><i type="Button" class="svg twitch" title="Twitch"></i></a><a href="https://www.ko-fi.com/your-user-name/" target="_blank" title="Support me on Ko-fi"><i type="Button" class="svg kofi" title="Support me on Ko-fi"></i></a></div></nav>
+      <nav class="vpad">
+        <a class="rpad s90" href="https://gptparv.github.io/til/about/"> About </a>
+      </nav>
+      <p class="s80"> &copy; <span id="year">2025</span> Today I Learned</p>
+      <p class="s80">Powered by <a href="https://www.getzola.org/" target="_blank">Zola</a> & <a href="https://github.com/jieiku/abridge/" target="_blank">Abridge</a></p>
+    </div>
+  </footer>
+</body>
+</html>
